@@ -1,0 +1,34 @@
+<script>
+    function playRound(roundNo, totalRounds, secretNo){
+        const tryString='(Try  ${roundNo} of  ${totalRounds})';
+        const tryString2="(Try" + roundNo + "of"+ totalRounds+  ")";
+        const guessNo =parseInt(prompt ('Please guess a number between 1 to 10 ${tryString}'));
+        if(guessNo===secretNo){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    const secretNo =7;
+    const totalRounds=3;
+    let userWon =false;
+    for(let round =1; round<=totalRounds; round++){
+        console.log(round);
+        const result=playRound(round ,totalRounds , secretNo);
+        if(result){
+            // user gave the right answer
+            alert("You won");
+            userWon=true;
+            break;
+        }if(round !=totalRounds){
+            alert("Try again");
+        }
+        // if(!userWon){
+            // alert("You lost Game over");
+        }
+        if(!userWon){
+            alert("Try lost: Game over")
+        }
+
+    
+</script>
